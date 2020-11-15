@@ -10,6 +10,12 @@ keep it simple and not use composer or any libraries to ensure it stays nice and
 This repo includes some **very** basic Pin access, and an example LED controller. Feel free to
 fork and change.
 
+## Requirements
+
+* `>=php7`
+* `gpio` (if running on pi)
+* `npm` (for commitizen)
+
 ## Usage
 
 1. Create Controller
