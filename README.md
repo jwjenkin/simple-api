@@ -37,19 +37,17 @@ class PinController extends BaseController
 
 ```
 
-2. Add new route to `Routes.class.php` (in our case, '/pin')
+2. Add new route to `routes.php` (in our case, '/pin')
 
 ```
 <?php
 
-...
-    const CURRENT = [
-        'GET' => [
-            '/' => 'BaseController@index',
-            '/pin' => 'PinController@index'
-        ]
-    ];
-...
+return = [
+    'GET' => [
+        '/' => 'BaseController@index',
+        '/pin' => 'PinController@index'
+    ]
+];
 ```
 
 3. Load up {localhost}/pin
@@ -58,3 +56,12 @@ class PinController extends BaseController
 Response-Type: application/json
 { "data": "Use GET (read) & POST (write) /pin/{pin} }
 ```
+
+## Random Tidbits
+
+* This "framework" has a faux `dd` command, which will just `var_dump` any
+params given to it, then exit. I may make this prettier later.
+
+* It's a bit of a pain to deal with both dynamic URLs *and* `POST` data. Currently,
+it looks for any params in the slug, then grabs key => value pairs in the `$_REQUEST`
+and passes the array to the handler.
