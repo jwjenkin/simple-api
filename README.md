@@ -54,7 +54,7 @@ return = [
 
 ```
 Response-Type: application/json
-{ "data": "Use GET (read) & POST (write) /pin/{pin} }
+{ "data": "Use GET (read) & POST (write) /pin/{pin}" }
 ```
 
 ## Random Tidbits
