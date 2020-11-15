@@ -1,7 +1,21 @@
 <?php
 
+/**
+ * Globals (globals.php)
+ *
+ * Contains functions which can be used anywhere within the application.
+ */
+
+// Custom Routes
 define('_ROUTES', require_once(__DIR__ . '/routes.php'));
 
+/**
+ * Returns data as a json object
+ *
+ * @param array|object|string $data
+ * @param int $status (optional)
+ * @return void
+ */
 function response($data, $status = 200)
 {
     if ( is_string($data) ) {
@@ -16,6 +30,12 @@ function response($data, $status = 200)
     exit();
 }
 
+/**
+ * Attempts to find current route in route list, passing along any data it finds
+ *
+ * @param string $slug
+ * @return string
+ */
 function lookup(string $slug)
 {
     $requestType = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET';
@@ -72,11 +92,27 @@ function lookup(string $slug)
     }
 }
 
+/**
+ * Fetches all routes of given type
+ *
+ * @param string $type
+ * @return array
+ */
 function routes_of_type(string $type)
 {
     return _ROUTES[$type];
 }
 
+/**
+ * Handles errors pleasantly.
+ *
+ * @param int (?) $severity
+ * @param string $message
+ * @param string $file
+ * @param int $line
+ * @return void
+ * @NOTE: this was mainly added thanks to lighttpd being a bit odd
+ */
 function exception_error_handler($severity, $message, $file, $line) {
     if (!(error_reporting() & $severity)) {
         // This error code is not included in error_reporting
@@ -85,6 +121,12 @@ function exception_error_handler($severity, $message, $file, $line) {
     throw new ErrorException($message, 0, $severity, $file, $line);
 }
 
+/**
+ * Quick var dump and die method
+ *
+ * @param array|double|int|object|string
+ * @return void
+ */
 function dd(...$args)
 {
     var_dump($args);

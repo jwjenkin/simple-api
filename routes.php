@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Routes
+ *
+ * Array of route types, slugs, and their handlers
+ */
+
 return [
     'GET' => [
         '/' => 'BaseController@index',
