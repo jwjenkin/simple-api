@@ -1,0 +1,23 @@
+{
+  "name": "renogy-status",
+  "version": "0.0.1",
+  "description": "Simple php API \"framework\"",
+  "main": "html/index.php",
+  "dependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jwjenkin/simple-api.git"
+  },
+  "author": "jwjenkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jwjenkin/simple-api/issues"
+  },
+  "homepage": "https://github.com/jwjenkin/simple-api#readme"
+}
